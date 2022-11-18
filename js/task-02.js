@@ -28,3 +28,30 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+const ingredientsRef = document.querySelector('#ingredients');
+
+// const ingredient = ingredients.map(ingredient => {
+//   const ingredientsRef = document.createElement('li');
+//   ingredientsRef.classList = 'item';
+//   ingredientsRef.textContent = ingredient;
+
+//   return ingredientsRef;
+// });
+
+// console.log(ingredient);
+
+// ingredientsRef.append(...ingredient);
+
+const makeIngredients = ingredient => {
+  return ingredient.map(ingredient => {
+    const ingredientsRef = document.createElement('li');
+    ingredientsRef.classList = 'item';
+    ingredientsRef.textContent = ingredient;
+
+    return ingredientsRef;
+  });
+};
+
+const ingredient = makeIngredients(ingredients);
+ingredientsRef.append(...ingredient);
