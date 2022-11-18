@@ -18,18 +18,15 @@
 //* Elements: 5
 
 const numberCategoriesRef = document.querySelectorAll('h2');
-const elementsRef = document.querySelectorAll('.item');
-// const numberElementsRef = elementsRef.querySelectorAll('ul');
-console.log(elementsRef.lastElementChild);
+
+const elementsRef = document.querySelectorAll('.item ul');
 
 console.log('Number of categories:', numberCategoriesRef.length); // Number of categories: 3
 console.log('Category:', numberCategoriesRef[0].textContent); // Category: Animals
-console.log('Elements:', numberCategoriesRef[0].length); // Elements: 4
+console.log('Elements:', elementsRef[0].querySelectorAll('li').length); // Elements: 4
 
 console.log('Category:', numberCategoriesRef[1].textContent); // Category: Products
-console.log('Elements:', numberCategoriesRef[0].length); // Elements: 3
+console.log('Elements:', elementsRef[1].querySelectorAll('li').length); // Elements: 3
 
 console.log('Category:', numberCategoriesRef[2].textContent); // Category: Technologies
-console.log('Elements:', numberCategoriesRef[0].length); // Elements: 5
-
-// const nameCategory = document.querySelectorAll()
+console.log('Elements:', elementsRef[2].querySelectorAll('li').length); // Elements: 5
