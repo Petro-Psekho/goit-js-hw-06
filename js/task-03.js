@@ -21,3 +21,45 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// const galleryRef = document.querySelector('.gallery');
+// console.log(galleryRef);
+
+// const makeGalleryImages = image => {
+//   return image.map(image => {
+//     const galleryImageRef = document.createElement('img');
+//     galleryImageRef.classList.add('gallery__img');
+//     galleryImageRef.src = image.url;
+//     galleryImageRef.alt = image.alt;
+//     galleryImageRef.width = '350';
+
+//     const galleryItemRef = document.createElement('li');
+//     galleryItemRef.classList.add('gallery__item');
+
+//     galleryItemRef.appendChild(galleryImageRef);
+
+//     return galleryItemRef;
+//   });
+// };
+
+// const makeGallery = makeGalleryImages(images);
+// console.log(...makeGallery);
+
+// galleryRef.append(...makeGallery);
+
+const makeImagesGallery = image => {
+  const { url, alt } = image;
+
+  return `
+  <li class="gallery__item">
+    <img class="gallery__img" src = ${url} alt = ${alt} width="700"
+  </li>
+  `;
+};
+
+const galleryRef = document.querySelector('.gallery');
+
+const makeGallerys = images.map(makeImagesGallery).join('');
+console.log(makeGallerys);
+
+galleryRef.insertAdjacentHTML('afterbegin', makeGallerys);
