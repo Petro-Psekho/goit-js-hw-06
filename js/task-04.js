@@ -13,7 +13,7 @@
 let counterValue = document.querySelector('#value');
 console.log(counterValue.textContent);
 
-counterValue = Number(counterValue.textContent);
+counterValue = Number((counterValue.textContent = 0));
 console.log(counterValue);
 
 const counterButtonRef = document.querySelectorAll('button');
