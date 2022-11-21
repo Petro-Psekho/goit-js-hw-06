@@ -11,21 +11,36 @@
 // 3) Оновлюй інтерфейс новим значенням змінної counterValue.
 
 let counterValue = document.querySelector('#value');
-console.log(counterValue.textContent);
 
-counterValue = Number((counterValue.textContent = 0));
+counterValue.textContent = 0;
 console.log(counterValue);
 
 const counterButtonRef = document.querySelectorAll('button');
-console.log(counterButtonRef[0].dataset.action);
+
+// counterButtonRef[0].addEventListener('click', counterButtonDecrementRef);
+
+// function counterButtonDecrementRef() {
+//   counterValue.innerHTML -= 1;
+// }
+
+// counterButtonRef[1].addEventListener('click', counterButtonIncrementRef);
+
+// function counterButtonIncrementRef() {
+//   counterValue.innerHTML++;
+// }
 
 const counterButtonDecrementRef = counterButtonRef[0];
 console.log(counterButtonDecrementRef);
 
 const counterButtonIncrementRef = counterButtonRef[1];
-console.log(counterButtonDecrementRef);
+console.log(counterButtonIncrementRef);
 
 counterButtonDecrementRef.addEventListener('click', () => {
-  counterValue -= 1;
-  console.log(counterValue);
+  counterValue.innerHTML -= 1;
+  console.log(counterValue.textContent);
+});
+
+counterButtonIncrementRef.addEventListener('click', () => {
+  counterValue.innerHTML++;
+  console.log(counterValue.textContent);
 });
