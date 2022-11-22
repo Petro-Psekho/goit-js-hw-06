@@ -22,3 +22,22 @@
 // #validation-input.invalid {
 //   border-color: #f44336;
 // }
+
+const inputRef = document.querySelector('#validation-input');
+console.log(inputRef);
+console.log(inputRef.attributes);
+console.log(inputRef.dataset.length);
+console.log(inputRef.type);
+
+inputRef.addEventListener('change', onInputBlur);
+
+function onInputBlur(event) {
+  console.log(event.attributes);
+  inputRef.classList.add('valid');
+  // console.log('take blur');
+  // if (inputLength === 6) {
+  //   inputRef.classList.add('valid');
+  // } else if (inputLength !== 6) {
+  //   inputRef.classList.add('invalid');
+  // }
+}
