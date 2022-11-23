@@ -24,20 +24,61 @@
 // }
 
 const inputRef = document.querySelector('#validation-input');
-console.log(inputRef);
-console.log(inputRef.attributes);
-console.log(inputRef.dataset.length);
-console.log(inputRef.type);
+// console.log(inputRef);
+// console.log(inputRef.attributes);
+// console.log(inputRef.dataset.length);
+// console.log(inputRef.type);
 
-inputRef.addEventListener('change', onInputBlur);
+// inputRef.addEventListener('blur', onInputBlur);
+// const dataLength = String(inputRef.dataset.length);
+// console.log(dataLength);
+// const inputLength = String(inputRef.value.length);
+// console.log(inputLength);
 
-function onInputBlur(event) {
-  console.log(event.attributes);
-  inputRef.classList.add('valid');
-  // console.log('take blur');
-  // if (inputLength === 6) {
-  //   inputRef.classList.add('valid');
-  // } else if (inputLength !== 6) {
-  //   inputRef.classList.add('invalid');
-  // }
+// console.log(inputLength === dataLength);
+
+// function onInputBlur() {
+//   console.log(String(inputRef.value.length));
+//   console.log(String(inputRef.dataset.length));
+//   console.log(inputRef);
+//   console.log(inputLength === dataLength);
+
+//   // inputRef.dataset.length === inputRef.value.length
+//   //   ? inputRef.classList.add('valid')
+//   //   : inputRef.classList.add('invalid');
+
+//   if (String(inputRef.value.length) === String(inputRef.dataset.length)) {
+//     console.log(
+//       String(inputRef.value.length) === String(inputRef.dataset.length),
+//     );
+//     inputRef.classList.add('valid');
+//   }
+//   inputRef.classList.toggle('invalid');
+// }
+
+inputRef.addEventListener('blur', onInputBlur);
+const dataLength = String(inputRef.dataset.length);
+console.log(dataLength);
+const inputLength = String(inputRef.value.length);
+console.log(inputLength);
+
+console.log(inputLength === dataLength);
+
+function onInputBlur() {
+  console.log(String(inputRef.value.length));
+  console.log(String(inputRef.dataset.length));
+  console.log(inputRef);
+  console.log(inputLength === dataLength);
+
+  // inputRef.dataset.length === inputRef.value.length
+  //   ? inputRef.classList.add('valid')
+  //   : inputRef.classList.add('invalid');
+
+  if (String(inputRef.value.length) === String(inputRef.dataset.length)) {
+    console.log(
+      String(inputRef.value.length) === String(inputRef.dataset.length),
+    );
+    inputRef.classList.add('valid');
+  }
+  inputRef.classList.toggle('invalid');
 }
