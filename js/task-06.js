@@ -72,7 +72,7 @@ function onInputBlur() {
 
   // inputRef.dataset.length === inputRef.value.length
   //   ? inputRef.classList.add('valid')
-  //   : inputRef.classList.add('invalid');
+  //   : inputRef.classList.toggle('invalid');
 
   if (String(inputRef.value.length) === String(inputRef.dataset.length)) {
     console.log(
