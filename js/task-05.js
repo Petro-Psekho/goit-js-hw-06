@@ -11,5 +11,8 @@ console.log(nameLabelRef);
 
 inputRef.addEventListener('input', event => {
   console.log(event.currentTarget.value);
-  nameLabelRef.textContent = event.currentTarget.value;
+
+  return event.currentTarget.value
+    ? (nameLabelRef.textContent = event.currentTarget.value)
+    : (nameLabelRef.textContent = 'Anonymous');
 });
