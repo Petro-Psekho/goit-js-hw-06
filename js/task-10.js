@@ -29,6 +29,9 @@ function getRandomHexColor() {
 const boxesRef = document.querySelector('#boxes');
 console.log(boxesRef);
 
+const inputRef = document.querySelector('input');
+console.log(inputRef);
+
 const buttonRef = document.querySelectorAll('button');
 console.log(buttonRef);
 
@@ -38,31 +41,29 @@ console.log(buttonCreateRef);
 const buttonDestroyRef = buttonRef[1];
 console.log(buttonDestroyRef);
 
-const inputRef = document.querySelector('input');
-console.log(inputRef);
+buttonCreateRef.addEventListener('click', createBoxes);
 
 function createBoxes() {
   boxesRef.innerHTML = '';
 
-  const num = inputRef.value;
-  const items = [];
+  const elements = [];
 
-  for (let i = 1; i <= num; i += 1) {
+  for (let i = 1; i <= inputRef.value; i += 1) {
     const createDiv = document.createElement('div');
+    console.log(createDiv);
 
     createDiv.style.backgroundColor = getRandomHexColor();
     createDiv.style.width = i * 10 + 20 + 'px';
     createDiv.style.height = i * 10 + 20 + 'px';
 
-    items.push(createDiv);
+    elements.push(createDiv);
   }
 
-  boxesRef.append(...items);
+  boxesRef.append(...elements);
 }
 
 const destroyBoxes = () => {
   boxesRef.innerHTML = '';
 };
 
-buttonCreateRef.addEventListener('click', createBoxes);
 buttonDestroyRef.addEventListener('click', destroyBoxes);
