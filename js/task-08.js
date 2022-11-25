@@ -23,15 +23,15 @@
 // 5) Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const formRef = document.querySelector('.login-form');
-console.log(formRef);
+// console.log(formRef);
 
 formRef.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault(); // не дає перезавантажити сторінку
 
-  console.dir(event.currentTarget.elements.email.value); // значення елементу форми email
-  console.dir(event.currentTarget.elements.password.value); // значення елементу форми password
+  //   console.dir(event.currentTarget.elements.email.value); // значення елементу форми email
+  //   console.dir(event.currentTarget.elements.password.value); // значення елементу форми password
 
   const formElements = event.currentTarget.elements;
   const mail = formElements.email.value;
@@ -42,9 +42,9 @@ function onFormSubmit(event) {
     password,
   };
 
-  if (mail === '' && mail === '') {
-    window.alert('Hello world!');
-  }
+  mail === '' || password === ''
+    ? window.alert('Всі поля повинні бути заповнені!')
+    : console.log(formData);
 
-  console.log(formData);
+  formRef.reset();
 }
