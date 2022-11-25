@@ -18,5 +18,5 @@ inputFontSizeControlRef.addEventListener('input', changeFontSize);
 function changeFontSize() {
   console.log(inputFontSizeControlRef.value);
 
-  //   inputFontSizeControlRef.classList.add('change-font-size');
+  spanText.style.fontSize = inputFontSizeControlRef.value + 'px';
 }
