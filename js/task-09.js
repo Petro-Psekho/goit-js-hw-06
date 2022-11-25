@@ -7,12 +7,28 @@
 
 // Для генерування випадкового кольору використовуй функцію getRandomHexColor.
 
-//* function getRandomHexColor() {
-//*   return `#${Math.floor(Math.random() * 16777215)
-//*     .toString(16)
-//*     .padStart(6, 0)}`;
-//* }
-
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const changeColorButtonRef = document.querySelector('.change-color');
+console.log(changeColorButtonRef);
+
+const spanColorValue = document.querySelector('.color');
+console.log(spanColorValue);
+
+const bodyBackgroundColor = document.querySelector('body');
+console.log(bodyBackgroundColor);
+
+changeColorButtonRef.addEventListener('click', backgroundColorChange);
+
+function backgroundColorChange() {
+  bodyBackgroundColor.style.backgroundColor = getRandomHexColor();
+
+  const backgroundColorValue = bodyBackgroundColor.style.backgroundColor;
+  console.log(backgroundColorValue);
+
+  spanColorValue.innerHTML = backgroundColorValue;
 }
